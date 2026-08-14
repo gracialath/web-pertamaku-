@@ -1,125 +1,127 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>My Little Gallery ✧</title>
-<style>
-    body {
-        font-family: 'Poppins', sans-serif;
-        background: linear-gradient(-45deg, #a8d8ff, #dbefff, #f0f9ff, #c2e9fb);
-        background-size: 400% 400%;
-        animation: gradientBG 15s ease infinite;
-        color: #333;
-        margin: 0;
-        padding: 20px;
-        text-align: center;
-        position: relative;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Little Gallery 🕸️</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(-45deg, #a8d8ff, #dbefff, #ff09ff, #c2e9fb);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
 
-    /* efek tekstur jaring di samping */
-    body::before {
-        content: "";
-        position: fixed;
-        top: 0; left: 0;
-        width: 100%; height: 100%;
-        background: url('https://www.transparenttextures.com/patterns/cubes.png');
-        opacity: 0.08;
-        z-index: -1;
-    }
-
-    @keyframes gradientBG {
-        0% {background-position: 0% 50%;}
-        50% {background-position: 100% 50%;}
-        100% {background-position: 0% 50%;}
+        /* Tekstur jaring */
         body::before {
-    h1 {
-        font-size: 2.2em;
-        color: #2a5f8f;
-        margin-bottom: 10px;
-    }
-    
-    p { color: #555; margin-bottom: 30px; }
+            content: "";
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/cubes.png');
+            opacity: 0.08;
+            z-index: -1;
+        }
 
-    .gallery {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 25px;
-        max-width: 900px;
-        margin: 0 auto;
-    }
+        /* Animasi background */
+        @keyframes gradientBG {
+            0% {background-position: 0% 50%;}
+            50% {background-position: 100% 50%;}
+            100% {background-position: 0% 50%;}
+        }
 
-    .card {
-        text-align: center;
-        background: rgba(255, 255, 255, 0.6);
-        padding: 15px;
-        border-radius: 20px;
-        backdrop-filter: blur(5px);
-        transition: transform 0.3s ease;
-    }
+        /* Animasi goyang imut */
+        @keyframes wiggle {
+            0% { transform: rotate(-2deg); }
+            50% { transform: rotate(2deg); }
+            100% { transform: rotate(-2deg); }
+        }
 
-    .card:hover {
-        transform: translateY(-5px);
-    }
+        h1 {
+            font-size: 2.2em;
+            color: #2a5f8f;
+            margin-bottom: 10px;
+        }
 
-    .gallery img {
-        width: 250px;
-        height: 250px;
-        object-fit: cover;
-        border-radius: 15px;
-        border: 4px solid #fff;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
+        p { color: #555; margin-bottom: 30px; }
 
-    .gallery img:hover {
-    animation: wiggle 0.5s ease;
-    box-shadow: 0 0 25px rgba(168, 216, 255, 0.7);
-    }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
 
-    .card p { 
-        margin-top: 12px; 
-        font-weight: 600; 
-        color: #2a5f8f; 
-        font-size: 0.95em;
-    }
+        .card {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.6);
+            padding: 15px;
+            border-radius: 20px;
+            backdrop-filter: blur(5px);
+            transition: transform 0.3s ease;
+        }
 
-    .button {
-        display: inline-block;
-        margin-top: 30px;
-        padding: 12px 25px;
-        background-color: #a8d8ff;
-        color: #2a5f8f;
-        text-decoration: none;
-        border-radius: 25px;
-        font-weight: bold;
-        transition: background-color 0.3s ease;
-    }
-    .button:hover { background-color: #8bc4ea; }
-</style>
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .gallery img {
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 15px;
+            border: 4px solid #fff;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .gallery img:hover {
+            animation: wiggle 0.5s ease; /* goyang 1x */
+            box-shadow: 0 0 25px rgba(168, 216, 255, 0.7); /* glow biru */
+            transform: none !important; /* PAKSA GAK GEDE */
+        }
+
+        .card p {
+            margin-top: 12px;
+            font-weight: 600;
+            color: #2a5f8f;
+            font-size: 0.95em;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 25px;
+            background-color: #a8d8ff;
+            color: #2a5f8f;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
-
-    <h1>My Little Gallery 🕸️✧</h1>
-    <p>welcome to my aesthetic corner ♡</p>
+    <h1>Galeri Spidergirl 🕸️</h1>
+    <p>Arahin kursor ke foto buat liat efeknya</p>
 
     <div class="gallery">
         <div class="card">
-            <img src="fotoku.jpeg" alt="me">
-            <p>Gracia ♡</p>
+            <img src="spidergirl.jpg" alt="Spidergirl">
+            <p>Spidergirl Cantik</p>
         </div>
         <div class="card">
-            <img src="spidergirl.jpg" alt="spidergirl 1">
-            <p>spidergirl mode ON 🕷️</p>
-        </div>
-        <div class="card">
-            <img src="spidergirl2.jpg" alt="spidergirl 2">
-            <p>with great power 🕸️</p>
+            <img src="gambar2.jpg" alt="Gambar 2">
+            <p>Foto Kece</p>
         </div>
     </div>
 
-    <a href="index.html" class="button">back to home ♡</a>
-
+    <a href="index.html" class="button">← Kembali</a>
 </body>
 </html>
