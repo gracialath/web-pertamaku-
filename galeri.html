@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Galeri - Gracia ♡</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+html, body {height: 100%; margin: 0; padding: 0;}
+body {
+    background: linear-gradient(-45deg, #cde9ff, #eaf6ff, #d4f1ff, #a8d8ff);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    font-family: 'Poppins', sans-serif;
+    color: #2a4d69;
+    text-align: center;
+    padding: 40px 20px;
+}
+@keyframes gradientBG {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 45px;
+    color: #3a7ca5;
+    text-shadow: 0 0 20px rgba(168, 216, 255, 0.7);
+}
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+.gallery img {
+    width: 250px;
+    border-radius: 20px;
+    border: 4px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 8px 25px rgba(58, 124, 165, 0.3);
+    transition: all 0.4s;
+}
+.gallery img:hover {
+    transform: scale(1.05) rotate(-2deg);
+}
+.button {
+    display: inline-block;
+    background: linear-gradient(90deg, #a8d8ff, #8cc7f0);
+    color: #2a4d69;
+    padding: 12px 28px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 500;
+    margin-top: 30px;
+}
+</style>
+</head>
+<body>
+    <h1>My Little Gallery ✧</h1>
+    <p>kumpulan foto-foto kesukaan aku ༘⋆</p>
+    
+    <div class="gallery">
+        <img src="fotoku.jpeg" alt="me">
+    </div>
+
+    <a href="index.html" class="button">← back to home</a>
+</body>
+      </html>
